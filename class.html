@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script src="https://kit.fontawesome.com/3058f11e8e.js" crossorigin="anonymous"></script>
+	<link rel="icon" href="index_files/favicon.png" type="image/png">
+	<meta name="description" content="Computer Vision course at UCLA">
+	<meta name="keywords" content="computer vision, computational imaging, computer science, computer graphics, computer vision, University of California Los Angeles, UCLA">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>EE149: Foundations of Computer Vision, Winter 2024</title>
+</head>
+
+<body>
+	<header>
+		<a href="https://visual.ee.ucla.edu/"><img id="logo" width="64" height="64" src="index_files/imaging.svg" alt="UCLA VMG"></a>
+		<a href="index.html"><h1>EE149: Foundations of Computer Vision<br>Winter 2024</h1></a>
+		<nav>
+			<ul>
+				<li><i class="fa-duotone fa-calendar-days fa-sm fa-fw"></i>&nbsp;Time: Tuesday, Thursday 12:00 pm - 2:50 pm ET</li>
+				<li><i class="fa-duotone fa-location-dot fa-sm fa-fw"></i>&nbsp;Location: Public Affairs Building (PUB AFF) 1249</li>
+				<li><i class="fa-duotone fa-person-chalkboard fa-sm fa-fw"></i>&nbsp;Instructor: <a href="https://www.ee.ucla.edu/achuta-kadambi/">Achuta Kadambi</a></li>
+				<li><i class="fa-duotone fa-clipboard-question fa-sm fa-fw"></i>&nbsp;Teaching assistant: <a href="https://web.cs.ucla.edu/~rishiu/">Rishi Upadhyay</a></li>
+				<li><i class="fa-duotone fa-bars fa-sm fa-fw"></i>&nbsp;Platforms: <!--<a href="https://piazza.com/class/llcozna4syr5nc">Piazza</a>, --><a href="https://bruinlearn.ucla.edu/courses/176986">BruinLearn</a>, <a href="https://piazza.com/class/lr4c16wj71i4g1/">Piazza</a></li>
+			</ul>
+		</nav>
+
+		<figure id="teaser">
+			<img src="index_files/teaser2.png" alt="teaser">
+			<figcaption>[ADD TEASER + CAPTION]</figcaption>
+		</figure>
+	</header>
+
+	<main>
+	<section id="description">
+		<h2>Course description</h2>
+
+		<p>This course covers the foundations of computer vision from both a theoretical and practical perspective. A particular emphasis is on “Classical” Computer Vision, which after taking this course, should be seen as complementary to deep learning. In fact, the pioneers of classical computer vision are the same community that developed convolutional neural networks (CNNs). The course should be relevant for CS majors specializing in AI, ECE majors specializing in cyberphysical systems and information engineering, ME majors specializing in robotics, Statistics majors specializing in machine learning, CogSci and Psych majors specializing in perception, and Math majors looking for applications.  </p>
+	</section>
+
+	<section id="prerequisites">
+		<h2>Prerequisites</h2>
+		<p>Familiarity with Python programming, and command of Linear Algebra, Calculus, Signal Processing, and Probability. Familiarity with LaTeX (or willingness to spend 1-2 hours learning it). Familiarity with deep learning. If you have no exposure to deep learning, you will be asked to watch an additional videolecture (deep learning I) that replaces the Memorial Day lecture.</p>
+	</section>
+
+	<section id="textbooks">
+		<h2>Textbooks</h2>
+		<p>There is no required textbook, although the following textbooks can be seen as a helpful resource. These are all freely available.</p>
+		<ul>
+			<li><i><a href="https://szeliski.org/Book/">Computer Vision: Algorithms and Applications, 2nd ed.</a></i></li>
+			<li><i><a href="https://www.eecis.udel.edu/~cer/arv/readings/old_mkss.pdf">An Invitation to 3-D Vision</a></i></li>
+			<li><i><a href="http://imagingtext.github.io">Computational Imaging</a></i></li>
+		</ul>
+	</section>
+	
+	<section id="evaluation">
+		<h2>Evaluation</h2>
+		<p>Your final grade will be made up of:</p>
+		<ul>
+			<li>Four two-week homework assignments (60%).</li>
+			<li>Final (40%).</li>
+			<li>In-Class Quizzes (Extra Credit).</li>
+		</ul>
+		<p><strong>Homework assignments:</strong>There will be 4 problem sets, each 2 weeks long. The release and due dates are shown on the class calendar. Homework submission will be through Gradescope.</p>
+		<!--<p><strong>Bonus homework assignment:</strong> There will be a seventh <i>optional</i> homework assignment that can be used to make up for lost credit. It will involve using a physics-based graphics renderer to simulate computational photography techniques.</p>-->
+		<p><strong>Late days:</strong> Everyone has 4 late days to be applied to any assignment. After these late days, there will be a 10% penalty per late day.</p>
+
+		<p><strong>In class quizzes:</strong> There will be short (10 min) quizzes at the beginning of each lecture. The questions on these quizzes will be designed to be built on top of the prior lectures material and will be similar to final exam problems. For each quiz you receive full credit on, you will receive 1 point extra credit on the final.
+
+		<p><strong>Collaboration policy:</strong> With the obvious exception of exams, we encourage you to discuss course activities with your friends and classmates as you are working on them. You will learn more in this class if you work with others than if you do not. Ask questions, answer questions, and share ideas liberally.</p>
+
+		<p>Learning cooperatively is different from sharing answers. You shouldn't be showing your code to other students or looking at others' code, except if you've finished a problem already, you can look at others' code to help them finish.</p>
+
+		<p>If you are helping another student, don't just tell them the answer; they will learn very little and run into trouble on exams. Instead, try to guide them toward discovering the solution on their own. Problem solving practice is the key to progress in computer science.</p>
+		<p><strong>Submitting homework:</strong> We will use <strong>Gradescope</strong>, available through Bruinlearn, for submitting and grading homework.</p>
+	</section>
+
+	<section id="contact">
+		<h2>Email, office hours, and discussion</h2>
+		<p><strong>Email:</strong> Please use [EE149] in the title when emailing the teaching staff!</p>
+		<p><strong>Office hours:</strong> Teaching staff will have regular office hours at the following times:</p>
+		<ul>
+			<li><strong>Thurs 2:00 - 2:50pm, Eng. IV 56-147J</strong>, Prof. Kadambi.</li>
+			<li><strong>TBD</strong>, Rishi.</li>
+		</ul>
+		<p>Feel free to email us about scheduling additional office hours.</p>
+		<p><strong>Discussion:</strong> TBD<!--, and both Piazza and Slack for course announcements.--></p>
+	</section>
+
+	<section id="syllabus">
+		<h2>Schedule</h2>
+		<p>Dates and topics are likely to change during the semester. Slides will be uploaded on this website before each lecture. Blank Slides are from past years and may change.</p>
+		
+		<h4>Week 1</h4>
+		<div class="week-box">
+		    <div class="event">
+		      <div class="top-level">
+		        <div class="event-date">Jan. 9</div>
+		        <div class="mid_section">
+		            <div class="event-title">Introduction, The 3 R's</div>
+		            <!-- <div class="quiz">
+		                <a href="">Quiz</a>,
+		                <a href="">Solutions</a>
+		            </div> -->
+		            <!-- <div class="hw"><a href="">HW 1 released</a>, Due 2/15. HW 2 Due</div> -->
+		        </div>
+
+		        <div class="level-1-links">
+		            <a href="https://bruinlearn.ucla.edu/courses/176986/files/15686587">Slides (Blank)</a>
+<!-- 		            <a href="{{ ev.slides }}">Slides</a>
+		            <a href="{{ ev.video }}">Video</a> -->
+		        </div>
+		      </div>
+		    </div>
+		    <div class="event">
+		      <div class="top-level">
+		        <div class="event-date">Jan. 11</div>
+		        <div class="mid_section">
+		            <div class="event-title">Image Processing I</div>
+<!-- 		            <div class="quiz">
+		                <a href="">Quiz</a>,
+		                <a href="">Solutions</a>
+		            </div> -->
+		            <!-- <div class="hw"><a href="">HW 1 released</a>, Due 2/15. HW 2 Due</div> -->
+		        </div>
+
+		        <div class="level-1-links">
+		            <a href="https://bruinlearn.ucla.edu/courses/176986/files/15686730">Slides (Blank)</a>
+		            <!-- <a href="{{ ev.slides }}">Slides</a>
+		            <a href="{{ ev.video }}">Video</a> -->
+		        </div>
+		      </div>
+		    </div>
+		</div>
+
+		<h4>Week 2</h4>
+		<div class="week-box">
+		    <div class="event">
+		      <div class="top-level">
+		        <div class="event-date">Jan. 16</div>
+		        <div class="mid_section">
+		            <div class="event-title">Image Processing II</div>
+		            <!-- <div class="quiz">
+		                <a href="">Quiz</a>,
+		                <a href="">Solutions</a>
+		            </div> -->
+		            <!-- <div class="hw"><a href="">HW 1 released</a>, Due 2/15. HW 2 Due</div> -->
+		        </div>
+
+		        <div class="level-1-links">
+		            <a href="https://bruinlearn.ucla.edu/courses/176986/files/15686861">Slides (Blank)</a>
+<!-- 		            <a href="{{ ev.slides }}">Slides</a>
+		            <a href="{{ ev.video }}">Video</a> -->
+		        </div>
+		      </div>
+		    </div>
+		    <div class="event">
+		      <div class="top-level">
+		        <div class="event-date">Jan. 18</div>
+		        <div class="mid_section">
+		            <div class="event-title">
+2D Fourier Transform, Intro to Deconvolution</div>
+<!-- 		            <div class="quiz">
+		                <a href="">Quiz</a>,
+		                <a href="">Solutions</a>
+		            </div> -->
+		            <div class="hw"><a href="">HW 1 released</a>, Due 2/1.</div>
+		        </div>
+
+		        <div class="level-1-links">
+		            <a href="https://bruinlearn.ucla.edu/courses/176986/files/15686862">Slides (Blank)</a>
+		            <!-- <a href="{{ ev.slides }}">Slides</a>
+		            <a href="{{ ev.video }}">Video</a> -->
+		        </div>
+		      </div>
+		    </div>
+		</div>
+
+		<h4>Week 3</h4>
+		<div class="week-box">
+		    <div class="event">
+		      <div class="top-level">
+		        <div class="event-date">Jan. 23</div>
+		        <div class="mid_section">
+		            <div class="event-title">Deconvolution, Blind Deconvolution</div>
+		            <!-- <div class="quiz">
+		                <a href="">Quiz</a>,
+		                <a href="">Solutions</a>
+		            </div> -->
+		            <!-- <div class="hw"><a href="">HW 1 released</a>, Due 2/15. HW 2 Due</div> -->
+		        </div>
+
+		        <div class="level-1-links">
+		            <a href="https://bruinlearn.ucla.edu/courses/176986/files/15686942">Slides (Blank)</a>
+<!-- 		            <a href="{{ ev.slides }}">Slides</a>
+		            <a href="{{ ev.video }}">Video</a> -->
+		        </div>
+		      </div>
+		    </div>
+		    <div class="event">
+		      <div class="top-level">
+		        <div class="event-date">Jan. 25</div>
+		        <div class="mid_section">
+		            <div class="event-title">Edges to Corners</div>
+<!-- 		            <div class="quiz">
+		                <a href="">Quiz</a>,
+		                <a href="">Solutions</a>
+		            </div> -->
+		            <!-- <div class="hw"><a href="">HW 1 released</a>, Due 2/15. HW 2 Due</div> -->
+		        </div>
+
+		        <div class="level-1-links">
+		            <a href="https://bruinlearn.ucla.edu/courses/176986/files/15686944">Slides (Blank)</a>
+		            <!-- <a href="{{ ev.slides }}">Slides</a>
+		            <a href="{{ ev.video }}">Video</a> -->
+		        </div>
+		      </div>
+		    </div>
+		</div>
+
+		<h4>Week 4</h4>
+		<div class="week-box">
+		    <div class="event">
+		      <div class="top-level">
+		        <div class="event-date">Jan. 30</div>
+		        <div class="mid_section">
+		            <div class="event-title">Representing Local Correspondence I</div>
+		            <!-- <div class="quiz">
+		                <a href="">Quiz</a>,
+		                <a href="">Solutions</a>
+		            </div> -->
+		            <!-- <div class="hw"><a href="">HW 1 released</a>, Due 2/15. HW 2 Due</div> -->
+		        </div>
+
+		        <div class="level-1-links">
+		            <a href="{{ ev.slides_blank }}">Slides (Blank)</a>
+<!-- 		            <a href="{{ ev.slides }}">Slides</a>
+		            <a href="{{ ev.video }}">Video</a> -->
+		        </div>
+		      </div>
+		    </div>
+		    <div class="event">
+		      <div class="top-level">
+		        <div class="event-date">Feb. 1</div>
+		        <div class="mid_section">
+		            <div class="event-title">Representing Local Correspondence II</div>
+<!-- 		            <div class="quiz">
+		                <a href="">Quiz</a>,
+		                <a href="">Solutions</a>
+		            </div> -->
+		            <div class="hw"><a href="">HW 2 released</a>, Due 2/15. HW 1 Due</div>
+		        </div>
+
+		        <div class="level-1-links">
+		            <a href="{{ ev.slides_blank }}">Slides (Blank)</a>
+		            <!-- <a href="{{ ev.slides }}">Slides</a>
+		            <a href="{{ ev.video }}">Video</a> -->
+		        </div>
+		      </div>
+		    </div>
+		</div>
+
+		<h4>Week 5</h4>
+		<div class="week-box">
+		    <div class="event">
+		      <div class="top-level">
+		        <div class="event-date">Feb. 6</div>
+		        <div class="mid_section">
+		            <div class="event-title">The Second R: Reconstruction</div>
+		            <!-- <div class="quiz">
+		                <a href="">Quiz</a>,
+		                <a href="">Solutions</a>
+		            </div> -->
+		            <!-- <div class="hw"><a href="">HW 1 released</a>, Due 2/15. HW 2 Due</div> -->
+		        </div>
+
+		        <div class="level-1-links">
+		            <a href="{{ ev.slides_blank }}">Slides (Blank)</a>
+<!-- 		            <a href="{{ ev.slides }}">Slides</a>
+		            <a href="{{ ev.video }}">Video</a> -->
+		        </div>
+		      </div>
+		    </div>
+		    <div class="event">
+		      <div class="top-level">
+		        <div class="event-date">Feb. 8</div>
+		        <div class="mid_section">
+		            <div class="event-title">Reconstruction on the Planar Domain I</div>
+<!-- 		            <div class="quiz">
+		                <a href="">Quiz</a>,
+		                <a href="">Solutions</a>
+		            </div> -->
+		            <!-- <div class="hw"><a href="">HW 1 released</a>, Due 2/15. HW 2 Due</div> -->
+		        </div>
+
+		        <div class="level-1-links">
+		            <a href="{{ ev.slides_blank }}">Slides (Blank)</a>
+		            <!-- <a href="{{ ev.slides }}">Slides</a>
+		            <a href="{{ ev.video }}">Video</a> -->
+		        </div>
+		      </div>
+		    </div>
+		</div>
+
+		<h4>Week 6</h4>
+		<div class="week-box">
+		    <div class="event">
+		      <div class="top-level">
+		        <div class="event-date">Feb. 13</div>
+		        <div class="mid_section">
+		            <div class="event-title">Reconstruction on the Planar Domain II</div>
+		            <!-- <div class="quiz">
+		                <a href="">Quiz</a>,
+		                <a href="">Solutions</a>
+		            </div> -->
+		            <!-- <div class="hw"><a href="">HW 1 released</a>, Due 2/15. HW 2 Due</div> -->
+		        </div>
+
+		        <div class="level-1-links">
+		            <a href="{{ ev.slides_blank }}">Slides (Blank)</a>
+<!-- 		            <a href="{{ ev.slides }}">Slides</a>
+		            <a href="{{ ev.video }}">Video</a> -->
+		        </div>
+		      </div>
+		    </div>
+		    <div class="event">
+		      <div class="top-level">
+		        <div class="event-date">Feb. 15</div>
+		        <div class="mid_section">
+		            <div class="event-title">Reconstruction on the Planar Domain III</div>
+<!-- 		            <div class="quiz">
+		                <a href="">Quiz</a>,
+		                <a href="">Solutions</a>
+		            </div> -->
+		            <div class="hw"><a href="">HW 3 released</a>, Due 2/29. HW 2 Due</div>
+		        </div>
+
+		        <div class="level-1-links">
+		            <a href="{{ ev.slides_blank }}">Slides (Blank)</a>
+		            <!-- <a href="{{ ev.slides }}">Slides</a>
+		            <a href="{{ ev.video }}">Video</a> -->
+		        </div>
+		      </div>
+		    </div>
+		</div>
+
+		<h4>Week 7</h4>
+		<div class="week-box">
+		    <div class="event">
+		      <div class="top-level">
+		        <div class="event-date">Feb. 20</div>
+		        <div class="mid_section">
+		            <div class="event-title">
+Reconstruction in 3D Space</div>
+		            <!-- <div class="quiz">
+		                <a href="">Quiz</a>,
+		                <a href="">Solutions</a>
+		            </div> -->
+		            <!-- <div class="hw"><a href="">HW 1 released</a>, Due 2/15. HW 2 Due</div> -->
+		        </div>
+
+		        <div class="level-1-links">
+		            <a href="{{ ev.slides_blank }}">Slides (Blank)</a>
+<!-- 		            <a href="{{ ev.slides }}">Slides</a>
+		            <a href="{{ ev.video }}">Video</a> -->
+		        </div>
+		      </div>
+		    </div>
+		    <div class="event">
+		      <div class="top-level">
+		        <div class="event-date">Feb. 22</div>
+		        <div class="mid_section">
+		            <div class="event-title">
+Reconstruction in 3D Space</div>
+<!-- 		            <div class="quiz">
+		                <a href="">Quiz</a>,
+		                <a href="">Solutions</a>
+		            </div> -->
+		            <!-- <div class="hw"><a href="">HW 1 released</a>, Due 2/15. HW 2 Due</div> -->
+		        </div>
+
+		        <div class="level-1-links">
+		            <a href="{{ ev.slides_blank }}">Slides (Blank)</a>
+		            <!-- <a href="{{ ev.slides }}">Slides</a>
+		            <a href="{{ ev.video }}">Video</a> -->
+		        </div>
+		      </div>
+		    </div>
+		</div>
+
+		<h4>Week 8</h4>
+		<div class="week-box">
+		    <div class="event">
+		      <div class="top-level">
+		        <div class="event-date">Feb. 27</div>
+		        <div class="mid_section">
+		            <div class="event-title">Stereo 3D Reconstruction</div>
+		            <!-- <div class="quiz">
+		                <a href="">Quiz</a>,
+		                <a href="">Solutions</a>
+		            </div> -->
+		            <!-- <div class="hw"><a href="">HW 1 released</a>, Due 2/15. HW 2 Due</div> -->
+		        </div>
+
+		        <div class="level-1-links">
+		            <a href="{{ ev.slides_blank }}">Slides (Blank)</a>
+<!-- 		            <a href="{{ ev.slides }}">Slides</a>
+		            <a href="{{ ev.video }}">Video</a> -->
+		        </div>
+		      </div>
+		    </div>
+		    <div class="event">
+		      <div class="top-level">
+		        <div class="event-date">Feb. 29</div>
+		        <div class="mid_section">
+		            <div class="event-title">Photometry, Photometric Stereo</div>
+<!-- 		            <div class="quiz">
+		                <a href="">Quiz</a>,
+		                <a href="">Solutions</a>
+		            </div> -->
+		            <!-- <div class="hw"><a href="">HW 1 released</a>, Due 2/15. HW 2 Due</div> -->
+		        </div>
+
+		        <div class="level-1-links">
+		            <a href="{{ ev.slides_blank }}">Slides (Blank)</a>
+		            <!-- <a href="{{ ev.slides }}">Slides</a>
+		            <a href="{{ ev.video }}">Video</a> -->
+		        </div>
+		      </div>
+		    </div>
+		</div>
+
+		<h4>Week 9</h4>
+		<div class="week-box">
+		    <div class="event">
+		      <div class="top-level">
+		        <div class="event-date">Mar. 5</div>
+		        <div class="mid_section">
+		            <div class="event-title">Deep Learning I</div>
+		            <!-- <div class="quiz">
+		                <a href="">Quiz</a>,
+		                <a href="">Solutions</a>
+		            </div> -->
+		            <!-- <div class="hw"><a href="">HW 1 released</a>, Due 2/15. HW 2 Due</div> -->
+		        </div>
+
+		        <div class="level-1-links">
+		            <a href="{{ ev.slides_blank }}">Slides (Blank)</a>
+<!-- 		            <a href="{{ ev.slides }}">Slides</a>
+		            <a href="{{ ev.video }}">Video</a> -->
+		        </div>
+		      </div>
+		    </div>
+		    <div class="event">
+		      <div class="top-level">
+		        <div class="event-date">Mar. 7</div>
+		        <div class="mid_section">
+		            <div class="event-title">Deep Learning II</div>
+<!-- 		            <div class="quiz">
+		                <a href="">Quiz</a>,
+		                <a href="">Solutions</a>
+		            </div> -->
+		            <!-- <div class="hw"><a href="">HW 1 released</a>, Due 2/15. HW 2 Due</div> -->
+		        </div>
+
+		        <div class="level-1-links">
+		            <a href="{{ ev.slides_blank }}">Slides (Blank)</a>
+		            <!-- <a href="{{ ev.slides }}">Slides</a>
+		            <a href="{{ ev.video }}">Video</a> -->
+		        </div>
+		      </div>
+		    </div>
+		</div>
+
+		<h4>Week 10</h4>
+		<div class="week-box">
+		    <div class="event">
+		      <div class="top-level">
+		        <div class="event-date">Mar. 12</div>
+		        <div class="mid_section">
+		            <div class="event-title">Deep Learning III</div>
+		            <!-- <div class="quiz">
+		                <a href="">Quiz</a>,
+		                <a href="">Solutions</a>
+		            </div> -->
+		            <!-- <div class="hw"><a href="">HW 1 released</a>, Due 2/15. HW 2 Due</div> -->
+		        </div>
+
+		        <div class="level-1-links">
+		            <a href="{{ ev.slides_blank }}">Slides (Blank)</a>
+<!-- 		            <a href="{{ ev.slides }}">Slides</a>
+		            <a href="{{ ev.video }}">Video</a> -->
+		        </div>
+		      </div>
+		    </div>
+		    <div class="event">
+		      <div class="top-level">
+		        <div class="event-date">Mar. 14</div>
+		        <div class="mid_section">
+		            <div class="event-title">Deep Learning IV</div>
+<!-- 		            <div class="quiz">
+		                <a href="">Quiz</a>,
+		                <a href="">Solutions</a>
+		            </div> -->
+		            <!-- <div class="hw"><a href="">HW 1 released</a>, Due 2/15. HW 2 Due</div> -->
+		        </div>
+
+		        <div class="level-1-links">
+		            <a href="{{ ev.slides_blank }}">Slides (Blank)</a>
+		            <!-- <a href="{{ ev.slides }}">Slides</a>
+		            <a href="{{ ev.video }}">Video</a> -->
+		        </div>
+		      </div>
+		    </div>
+		</div>
+
+		<h4>Finals Week</h4>
+		<div class="week-box">
+		    <div class="event">
+		      <div class="top-level">
+		        <div class="event-date">Mar. 19</div>
+		        <div class="mid_section">
+		            <div class="event-title">Final Exam, 8-11AM, Location TBD</div>
+		            <!-- <div class="quiz">
+		                <a href="">Quiz</a>,
+		                <a href="">Solutions</a>
+		            </div> -->
+		            <!-- <div class="hw"><a href="">HW 1 released</a>, Due 2/15. HW 2 Due</div> -->
+		        </div>
+
+		        <!-- <div class="level-1-links">
+		            <a href="{{ ev.slides_blank }}">Slides (Blank)</a>
+		            <a href="{{ ev.slides }}">Slides</a>
+		            <a href="{{ ev.video }}">Video</a>
+		        </div> -->
+		      </div>
+		    </div>
+		</div>
+
+
+		<!-- <table>
+			<thead>
+				<tr><th>Date</th><th>Topics</th><th>Homework</th></tr>
+			</thead>
+			<tbody>
+				<tr><td>M, Aug 28</td><td><a href="lectures/lecture_01.pdf">Introduction</a></td><td></td></tr>
+				<tr><td>W, Aug 30</td><td><a href="lectures/lecture_02.pdf">Digital photography</a></td><td></td></tr>
+				<tr><td>F, Sep 01</td><td></td><td><a href="assignments/assgn1.zip">HW1 out</a></td></tr>
+				<tr><td>M, Sep 04</td><td><strong>No class (Labor Day)</strong></td><td></td></tr>
+				<tr><td>W, Sep 06</td><td><a href="lectures/lecture_03.pdf">Pinholes and lenses</a></td><td></td></tr>
+				<tr><td>M, Sep 11</td><td><a href="lectures/lecture_04.pdf">Photographic optics and aberrations</a></td><td></td></tr>
+				<tr><td>W, Sep 13</td><td><a href="lectures/lecture_05.pdf">Exposure and high-dynamic-range imaging</a></td><td></td></tr>
+				<tr><td>F, Sep 15</td><td></td><td>HW1 due, <a href="assignments/assgn2.zip">HW2 out</a></td></tr>
+				<tr><td>M, Sep 18</td><td><a href="lectures/lecture_06.pdf">Noise</a></td><td></td></tr>
+				<tr><td>W, Sep 20</td><td><a href="lectures/lecture_07.pdf">Color</a></td><td></td></tr>
+				<tr><td>F, Sep 22</td><td></td><td></td></tr>
+				<tr><td>M, Sep 25</td><td><a href="lectures/lecture_08.pdf">Bilateral and edge-aware filtering</a></td><td></td></tr>
+				<tr><td>W, Sep 27</td><td><a href="lectures/lecture_09.pdf">Gradient-domain image processing</a></td><td></td></tr>
+				<tr><td>F, Sep 29</td><td></td><td>HW2 due, <a href="assignments/assgn3.zip">HW3 out</a></td></tr>
+				<tr><td>M, Oct 02</td><td><a href="lectures/lecture_10.pdf">Focal stacks and depth from (de)focus</a></td><td></td></tr>
+				<tr><td>W, Oct 04</td><td><a href="lectures/lecture_10.pdf">Lightfields</a></td><td></td></tr>
+				<tr><td>M, Oct 09</td><td><a href="lectures/lecture_11.pdf">Deconvolution</a></td><td></td></tr>
+				<tr><td>W, Oct 11</td><td><a href="lectures/lecture_12.pdf">Coded photography</a></td><td></td></tr>
+				<tr><td>F, Oct 13</td><td></td><td>HW3 due, <a href="assignments/assgn4.zip">HW4 out</a></td></tr>
+				<tr><td>M, Oct 16</td><td><strong>No class (Fall break)</strong></td><td></td></tr>
+				<tr><td>W, Oct 18</td><td><strong>No class (Fall break)</strong></td><td></td></tr>
+				<tr><td>M, Oct 23</td><td><a href="lectures/lecture_13.pdf">Radiometry and reflectance</a></td><td></td></tr>
+				<tr><td>W, Oct 25</td><td><a href="lectures/lecture_14.pdf">Photometric stereo</a></td><td></td></tr>
+				<tr><td>M, Oct 30</td><td><a href="lectures/lecture_15.pdf">Geometric camera modeling and calibration</a></td><td></td></tr>
+				<tr><td>W, Nov 01</td><td><a href="lectures/lecture_16.pdf">Two-view geometry</a></td><td></td></tr>
+				<tr><td>F, Nov 03</td><td></td><td>HW4 due</td></tr>
+				<tr><td>M, Nov 06</td><td><a href="lectures/lecture_16.pdf">Disparity and stereo</a></td><td><a href="assignments/assgn5.zip">HW5 out</a></td></tr>
+				<tr><td>W, Nov 08</td><td><a href="lectures/lecture_17.pdf">Time-of-flight imaging</a></td><td></td></tr>
+				<tr><td>M, Nov 13</td><td><a href="lectures/lecture_18.pdf">Indirect illumination</a></td><td></td></tr>
+				<tr><td>W, Nov 15</td><td><a href="lectures/lecture_19.pdf">Light transport matrices</a></td><td></td></tr>
+				<tr><td>M, Nov 20</td><td>Fourier optics</td><td>HW5 due, <a href="assignments/assgn6.zip">HW6 out</a></td></tr>
+				<tr><td>W, Nov 22</td><td><strong>No class (Thanksgiving)</strong></td><td></td></tr>
+				<tr><td>M, Nov 27</td><td>Advanced topics</td><td>Project proposal due</td></tr>
+				<tr><td>W, Nov 29</td><td>Advanced topics</td><td></td></tr>
+				<tr><td>M, Dec 04</td><td>Advanced topics</td><td></td></tr>
+				<tr><td>W, Dec 06</td><td><a href="lectures/lecture_20.pdf">Wrap up</a></td><td></td></tr>
+				<tr><td>F, Dec 08</td><td></td><td>HW6 due</td></tr>
+			</tbody>
+		</table> -->
+	</section>
+
+	<section id="acknowledgments">
+		<h2>Acknowledgments</h2>
+		<p>Lecture notes, homework assignments, and quizzes have been drawn from material from colleagues: Ioannis Gkioulekas, Kris Kitani, Bob Collins, Ramesh Raskar, Ayush Bhandari, Gordon Wetzstein, Srinivasa Narashiman, Stefano Soatto, Marc Levoy, Martial Hebert, Matthew O'Toole, Alyosha Efros, Ali Faharadi, Deva Ramanan, Yaser Sheikh, Todd Zickler. More specific acknowledgments can be found in the corresponding material. If you use any material, please apply credits recursively.</p>
+	</section>
+	</main>
+</body>
+</html>
