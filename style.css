@@ -242,7 +242,7 @@ footer {
 }
 
 .mid_section {
-    width: 60%;
+    width: 50%;
 }
 
 .event {
@@ -258,8 +258,13 @@ footer {
   align-items: baseline;
 }
 
+.p_cen{
+	display: flex;
+	flex-direction: row;
+}
+
 .event-date {
-  width: 15%;
+  width: 10%;
 }
 
 .event-title {
@@ -269,7 +274,9 @@ footer {
 
 .level-1-links {
   display: flex;
-  width: 25%;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 37%;
 }
 
 .level-1-links a {

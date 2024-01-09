@@ -2,6 +2,16 @@
 <html lang="en">
 <head>
 	<script src="https://kit.fontawesome.com/3058f11e8e.js" crossorigin="anonymous"></script>
+
+	<script>
+		function link_func(link){
+			let pass = prompt("Password:");
+			if (pass == "VMG_2018!!"){
+				location.href = link;
+			}
+		}
+
+	</script>
 	<link rel="icon" href="index_files/favicon.png" type="image/png">
 	<meta name="description" content="Computer Vision course at UCLA">
 	<meta name="keywords" content="computer vision, computational imaging, computer science, computer graphics, computer vision, University of California Los Angeles, UCLA">
@@ -17,7 +27,7 @@
 		<a href="index.html"><h1>EE149: Foundations of Computer Vision<br>Winter 2024</h1></a>
 		<nav>
 			<ul>
-				<li><i class="fa-duotone fa-calendar-days fa-sm fa-fw"></i>&nbsp;Time: Tuesday, Thursday 12:00 pm - 2:50 pm ET</li>
+				<li><i class="fa-duotone fa-calendar-days fa-sm fa-fw"></i>&nbsp;Time: Tuesday, Thursday 12:05 pm - 1:50 pm</li>
 				<li><i class="fa-duotone fa-location-dot fa-sm fa-fw"></i>&nbsp;Location: Public Affairs Building (PUB AFF) 1249</li>
 				<li><i class="fa-duotone fa-person-chalkboard fa-sm fa-fw"></i>&nbsp;Instructor: <a href="https://www.ee.ucla.edu/achuta-kadambi/">Achuta Kadambi</a></li>
 				<li><i class="fa-duotone fa-clipboard-question fa-sm fa-fw"></i>&nbsp;Teaching assistant: <a href="https://web.cs.ucla.edu/~rishiu/">Rishi Upadhyay</a></li>
@@ -25,10 +35,10 @@
 			</ul>
 		</nav>
 
-		<figure id="teaser">
+		<!-- <figure id="teaser">
 			<img src="index_files/teaser2.png" alt="teaser">
 			<figcaption>[ADD TEASER + CAPTION]</figcaption>
-		</figure>
+		</figure> -->
 	</header>
 
 	<main>
@@ -65,7 +75,7 @@
 		<!--<p><strong>Bonus homework assignment:</strong> There will be a seventh <i>optional</i> homework assignment that can be used to make up for lost credit. It will involve using a physics-based graphics renderer to simulate computational photography techniques.</p>-->
 		<p><strong>Late days:</strong> Everyone has 4 late days to be applied to any assignment. After these late days, there will be a 10% penalty per late day.</p>
 
-		<p><strong>In class quizzes:</strong> There will be short (10 min) quizzes at the beginning of each lecture. The questions on these quizzes will be designed to be built on top of the prior lectures material and will be similar to final exam problems. For each quiz you receive full credit on, you will receive 1 point extra credit on the final.
+		<p><strong>In class quizzes:</strong> There will be short (10 min) quizzes at the beginning of each lecture. The questions on these quizzes will be designed to be built on top of the prior lectures material and will be similar to final exam problems. For each quiz you receive full credit on, you will receive 1 point extra credit on the final. The first quiz will be on Thursday Jan. 11.
 
 		<p><strong>Collaboration policy:</strong> With the obvious exception of exams, we encourage you to discuss course activities with your friends and classmates as you are working on them. You will learn more in this class if you work with others than if you do not. Ask questions, answer questions, and share ideas liberally.</p>
 
@@ -84,7 +94,6 @@
 			<li><strong>TBD</strong>, Rishi.</li>
 		</ul>
 		<p>Feel free to email us about scheduling additional office hours.</p>
-		<p><strong>Discussion:</strong> TBD<!--, and both Piazza and Slack for course announcements.--></p>
 	</section>
 
 	<section id="syllabus">
@@ -98,17 +107,16 @@
 		        <div class="event-date">Jan. 9</div>
 		        <div class="mid_section">
 		            <div class="event-title">Introduction, The 3 R's</div>
-		            <!-- <div class="quiz">
-		                <a href="">Quiz</a>,
-		                <a href="">Solutions</a>
-		            </div> -->
+		            <div class="quiz">Quiz, Solutions</div>
 		            <!-- <div class="hw"><a href="">HW 1 released</a>, Due 2/15. HW 2 Due</div> -->
 		        </div>
 
 		        <div class="level-1-links">
-		            <a href="https://bruinlearn.ucla.edu/courses/176986/files/15686587">Slides (Blank)</a>
-<!-- 		            <a href="{{ ev.slides }}">Slides</a>
-		            <a href="{{ ev.video }}">Video</a> -->
+		            <div class="p_cen"><p><a href="https://bruinlearn.ucla.edu/courses/176986/files/15686587">Blank Slides</a></p></div>
+		            <div class="p_cen"><p onclick='link_func("https://docs.google.com/presentation/d/1NWAtwypFprHlafrYuzRbPksI6IayrpbM/edit")
+		            '><a>Slides (Inst.)</a></p></div>
+		            <div class="p_cen"><p>Slides</p></div>
+		            <div class="p_cen"><p>Video</p></div>
 		        </div>
 		      </div>
 		    </div>
@@ -117,17 +125,16 @@
 		        <div class="event-date">Jan. 11</div>
 		        <div class="mid_section">
 		            <div class="event-title">Image Processing I</div>
-<!-- 		            <div class="quiz">
-		                <a href="">Quiz</a>,
-		                <a href="">Solutions</a>
-		            </div> -->
+		            <div class="quiz">Quiz, Solutions</div>
 		            <!-- <div class="hw"><a href="">HW 1 released</a>, Due 2/15. HW 2 Due</div> -->
 		        </div>
 
 		        <div class="level-1-links">
-		            <a href="https://bruinlearn.ucla.edu/courses/176986/files/15686730">Slides (Blank)</a>
-		            <!-- <a href="{{ ev.slides }}">Slides</a>
-		            <a href="{{ ev.video }}">Video</a> -->
+		            <div class="p_cen"><p><a href="https://bruinlearn.ucla.edu/courses/176986/files/15686730">Blank Slides</a></p></div>
+		            <div class="p_cen"><p onclick='link_func("https://docs.google.com/presentation/d/149WUPdzHqyz-hvLXTXohZEdxpdr2w2y3/edit")
+		            '><a>Slides (Inst.)</a></p></div>
+		            <div class="p_cen"><p>Slides</p></div>
+		            <div class="p_cen"><p>Video</p></div>
 		        </div>
 		      </div>
 		    </div>
@@ -140,17 +147,16 @@
 		        <div class="event-date">Jan. 16</div>
 		        <div class="mid_section">
 		            <div class="event-title">Image Processing II</div>
-		            <!-- <div class="quiz">
-		                <a href="">Quiz</a>,
-		                <a href="">Solutions</a>
-		            </div> -->
+		            <div class="quiz">Quiz, Solutions</div>
 		            <!-- <div class="hw"><a href="">HW 1 released</a>, Due 2/15. HW 2 Due</div> -->
 		        </div>
 
 		        <div class="level-1-links">
-		            <a href="https://bruinlearn.ucla.edu/courses/176986/files/15686861">Slides (Blank)</a>
-<!-- 		            <a href="{{ ev.slides }}">Slides</a>
-		            <a href="{{ ev.video }}">Video</a> -->
+		            <div class="p_cen"><p><a href="https://bruinlearn.ucla.edu/courses/176986/files/15686861">Blank Slides</a></p></div>
+		            <div class="p_cen"><p onclick='link_func("https://docs.google.com/presentation/d/1vKTOLxWNT-yWiUoMuIOCWWcDpkXziarf/edit")
+		            '><a>Slides (Inst.)</a></p></div>
+		            <div class="p_cen"><p>Slides</p></div>
+		            <div class="p_cen"><p>Video</p></div>
 		        </div>
 		      </div>
 		    </div>
@@ -160,17 +166,16 @@
 		        <div class="mid_section">
 		            <div class="event-title">
 2D Fourier Transform, Intro to Deconvolution</div>
-<!-- 		            <div class="quiz">
-		                <a href="">Quiz</a>,
-		                <a href="">Solutions</a>
-		            </div> -->
+ 		            <div class="quiz">Quiz, Solutions</div>
 		            <div class="hw"><a href="">HW 1 released</a>, Due 2/1.</div>
 		        </div>
 
 		        <div class="level-1-links">
-		            <a href="https://bruinlearn.ucla.edu/courses/176986/files/15686862">Slides (Blank)</a>
-		            <!-- <a href="{{ ev.slides }}">Slides</a>
-		            <a href="{{ ev.video }}">Video</a> -->
+		            <div class="p_cen"><p><a href="https://bruinlearn.ucla.edu/courses/176986/files/15686862">Blank Slides</a></p></div>
+		            <div class="p_cen"><p onclick='link_func("https://docs.google.com/presentation/d/1rJ6NSKxH5agZ0dRRgfMYpDlUWyIZHGEZ/edit")
+		            '><a>Slides (Inst.)</a></p></div>
+		            <div class="p_cen"><p>Slides</p></div>
+		            <div class="p_cen"><p>Video</p></div>
 		        </div>
 		      </div>
 		    </div>
@@ -183,17 +188,16 @@
 		        <div class="event-date">Jan. 23</div>
 		        <div class="mid_section">
 		            <div class="event-title">Deconvolution, Blind Deconvolution</div>
-		            <!-- <div class="quiz">
-		                <a href="">Quiz</a>,
-		                <a href="">Solutions</a>
-		            </div> -->
+		            <div class="quiz">Quiz, Solutions</div>
 		            <!-- <div class="hw"><a href="">HW 1 released</a>, Due 2/15. HW 2 Due</div> -->
 		        </div>
 
 		        <div class="level-1-links">
-		            <a href="https://bruinlearn.ucla.edu/courses/176986/files/15686942">Slides (Blank)</a>
-<!-- 		            <a href="{{ ev.slides }}">Slides</a>
-		            <a href="{{ ev.video }}">Video</a> -->
+		            <div class="p_cen"><p><a href="https://bruinlearn.ucla.edu/courses/176986/files/15686942">Blank Slides</a></p></div>
+		            <div class="p_cen"><p onclick='link_func("https://docs.google.com/presentation/d/1JpJM2J0lyrZsHC0bLFNNlFbcGFYQrNQo/edit")
+		            '><a>Slides (Inst.)</a></p></div>
+		            <div class="p_cen"><p>Slides</p></div>
+		            <div class="p_cen"><p>Video</p></div>
 		        </div>
 		      </div>
 		    </div>
@@ -202,17 +206,16 @@
 		        <div class="event-date">Jan. 25</div>
 		        <div class="mid_section">
 		            <div class="event-title">Edges to Corners</div>
-<!-- 		            <div class="quiz">
-		                <a href="">Quiz</a>,
-		                <a href="">Solutions</a>
-		            </div> -->
+					<div class="quiz">Quiz, Solutions</div>
 		            <!-- <div class="hw"><a href="">HW 1 released</a>, Due 2/15. HW 2 Due</div> -->
 		        </div>
 
 		        <div class="level-1-links">
-		            <a href="https://bruinlearn.ucla.edu/courses/176986/files/15686944">Slides (Blank)</a>
-		            <!-- <a href="{{ ev.slides }}">Slides</a>
-		            <a href="{{ ev.video }}">Video</a> -->
+		            <div class="p_cen"><p><a href="https://bruinlearn.ucla.edu/courses/176986/files/15686944">Blank Slides</a></p></div>
+		            <div class="p_cen"><p onclick='link_func("hhttps://docs.google.com/presentation/d/1t9tKUfThNhBb-TGpfd5GmssLlwS1C5hM/edit")
+		            '><a>Slides (Inst.)</a></p></div>
+		            <div class="p_cen"><p>Slides</p></div>
+		            <div class="p_cen"><p>Video</p></div>
 		        </div>
 		      </div>
 		    </div>
@@ -225,17 +228,16 @@
 		        <div class="event-date">Jan. 30</div>
 		        <div class="mid_section">
 		            <div class="event-title">Representing Local Correspondence I</div>
-		            <!-- <div class="quiz">
-		                <a href="">Quiz</a>,
-		                <a href="">Solutions</a>
-		            </div> -->
+		            <div class="quiz">Quiz, Solutions</div>
 		            <!-- <div class="hw"><a href="">HW 1 released</a>, Due 2/15. HW 2 Due</div> -->
 		        </div>
 
 		        <div class="level-1-links">
-		            <a href="{{ ev.slides_blank }}">Slides (Blank)</a>
-<!-- 		            <a href="{{ ev.slides }}">Slides</a>
-		            <a href="{{ ev.video }}">Video</a> -->
+		            <div class="p_cen"><p><a href="https://bruinlearn.ucla.edu/courses/176986/files/15688283">Blank Slides</a></p></div>
+		            <div class="p_cen"><p onclick='link_func("https://docs.google.com/presentation/d/1T4vEtylSXTdk3JL-_W_RhLLyIpx3AGqq/edit")
+		            '><a>Slides (Inst.)</a></p></div>
+		            <div class="p_cen"><p>Slides</p></div>
+		            <div class="p_cen"><p>Video</p></div>
 		        </div>
 		      </div>
 		    </div>
@@ -244,17 +246,16 @@
 		        <div class="event-date">Feb. 1</div>
 		        <div class="mid_section">
 		            <div class="event-title">Representing Local Correspondence II</div>
-<!-- 		            <div class="quiz">
-		                <a href="">Quiz</a>,
-		                <a href="">Solutions</a>
-		            </div> -->
+		            <div class="quiz">Quiz, Solutions</div>
 		            <div class="hw"><a href="">HW 2 released</a>, Due 2/15. HW 1 Due</div>
 		        </div>
 
 		        <div class="level-1-links">
-		            <a href="{{ ev.slides_blank }}">Slides (Blank)</a>
-		            <!-- <a href="{{ ev.slides }}">Slides</a>
-		            <a href="{{ ev.video }}">Video</a> -->
+		            <div class="p_cen"><p><a href="https://bruinlearn.ucla.edu/courses/176986/files/15688284">Blank Slides</a></p></div>
+		            <div class="p_cen"><p onclick='link_func("https://docs.google.com/presentation/d/1uBaKGZ-OaQCAysQ0GYkp4gVVllVC8TFL/edit")
+		            '><a>Slides (Inst.)</a></p></div>
+		            <div class="p_cen"><p>Slides</p></div>
+		            <div class="p_cen"><p>Video</p></div>
 		        </div>
 		      </div>
 		    </div>
@@ -267,17 +268,16 @@
 		        <div class="event-date">Feb. 6</div>
 		        <div class="mid_section">
 		            <div class="event-title">The Second R: Reconstruction</div>
-		            <!-- <div class="quiz">
-		                <a href="">Quiz</a>,
-		                <a href="">Solutions</a>
-		            </div> -->
+		            <div class="quiz">Quiz, Solutions</div>
 		            <!-- <div class="hw"><a href="">HW 1 released</a>, Due 2/15. HW 2 Due</div> -->
 		        </div>
 
 		        <div class="level-1-links">
-		            <a href="{{ ev.slides_blank }}">Slides (Blank)</a>
-<!-- 		            <a href="{{ ev.slides }}">Slides</a>
-		            <a href="{{ ev.video }}">Video</a> -->
+		            <div class="p_cen"><p><a href="https://bruinlearn.ucla.edu/courses/176986/files/15688297">Blank Slides</a></p></div>
+		            <div class="p_cen"><p onclick='link_func("https://docs.google.com/presentation/d/1JP038FCjtwGRncWD_sV-xZyBZ-WDN4zO/edit")
+		            '><a>Slides (Inst.)</a></p></div>
+		            <div class="p_cen"><p>Slides</p></div>
+		            <div class="p_cen"><p>Video</p></div>
 		        </div>
 		      </div>
 		    </div>
@@ -286,17 +286,16 @@
 		        <div class="event-date">Feb. 8</div>
 		        <div class="mid_section">
 		            <div class="event-title">Reconstruction on the Planar Domain I</div>
-<!-- 		            <div class="quiz">
-		                <a href="">Quiz</a>,
-		                <a href="">Solutions</a>
-		            </div> -->
+ 		            <div class="quiz">Quiz, Solutions</div>
 		            <!-- <div class="hw"><a href="">HW 1 released</a>, Due 2/15. HW 2 Due</div> -->
 		        </div>
 
 		        <div class="level-1-links">
-		            <a href="{{ ev.slides_blank }}">Slides (Blank)</a>
-		            <!-- <a href="{{ ev.slides }}">Slides</a>
-		            <a href="{{ ev.video }}">Video</a> -->
+		            <div class="p_cen"><p><a href="https://bruinlearn.ucla.edu/courses/176986/files/15688297">Blank Slides</a></p></div>
+		            <div class="p_cen"><p onclick='link_func("https://docs.google.com/presentation/d/1BOIgGymygu-GFC2ZZlEdRYD5t1uH-pYE/edit")
+		            '><a>Slides (Inst.)</a></p></div>
+		            <div class="p_cen"><p>Slides</p></div>
+		            <div class="p_cen"><p>Video</p></div>
 		        </div>
 		      </div>
 		    </div>
@@ -309,17 +308,16 @@
 		        <div class="event-date">Feb. 13</div>
 		        <div class="mid_section">
 		            <div class="event-title">Reconstruction on the Planar Domain II</div>
-		            <!-- <div class="quiz">
-		                <a href="">Quiz</a>,
-		                <a href="">Solutions</a>
-		            </div> -->
+		            <div class="quiz">Quiz, Solutions</div>
 		            <!-- <div class="hw"><a href="">HW 1 released</a>, Due 2/15. HW 2 Due</div> -->
 		        </div>
 
 		        <div class="level-1-links">
-		            <a href="{{ ev.slides_blank }}">Slides (Blank)</a>
-<!-- 		            <a href="{{ ev.slides }}">Slides</a>
-		            <a href="{{ ev.video }}">Video</a> -->
+		            <div class="p_cen"><p><a href="https://bruinlearn.ucla.edu/courses/176986/files/15688303">Blank Slides</a></p></div>
+		            <div class="p_cen"><p onclick='link_func("https://docs.google.com/presentation/d/1TGbFc_lHPULU_jpF51Kb7VtsrR-dH8fr/edit")
+		            '><a>Slides (Inst.)</a></p></div>
+		            <div class="p_cen"><p>Slides</p></div>
+		            <div class="p_cen"><p>Video</p></div>
 		        </div>
 		      </div>
 		    </div>
@@ -328,17 +326,16 @@
 		        <div class="event-date">Feb. 15</div>
 		        <div class="mid_section">
 		            <div class="event-title">Reconstruction on the Planar Domain III</div>
-<!-- 		            <div class="quiz">
-		                <a href="">Quiz</a>,
-		                <a href="">Solutions</a>
-		            </div> -->
+ 		            <div class="quiz">Quiz, Solutions</div>
 		            <div class="hw"><a href="">HW 3 released</a>, Due 2/29. HW 2 Due</div>
 		        </div>
 
 		        <div class="level-1-links">
-		            <a href="{{ ev.slides_blank }}">Slides (Blank)</a>
-		            <!-- <a href="{{ ev.slides }}">Slides</a>
-		            <a href="{{ ev.video }}">Video</a> -->
+		            <div class="p_cen"><p><a href="https://bruinlearn.ucla.edu/courses/176986/files/15688303">Blank Slides</a></p></div>
+		            <div class="p_cen"><p onclick='link_func("https://docs.google.com/presentation/d/1CRan4sBcBUuMLzcDASE5VFyqIu_-g9d1/edit")
+		            '><a>Slides (Inst.)</a></p></div>
+		            <div class="p_cen"><p>Slides</p></div>
+		            <div class="p_cen"><p>Video</p></div>
 		        </div>
 		      </div>
 		    </div>
@@ -352,17 +349,16 @@
 		        <div class="mid_section">
 		            <div class="event-title">
 Reconstruction in 3D Space</div>
-		            <!-- <div class="quiz">
-		                <a href="">Quiz</a>,
-		                <a href="">Solutions</a>
-		            </div> -->
+		            <div class="quiz">Quiz, Solutions</div>
 		            <!-- <div class="hw"><a href="">HW 1 released</a>, Due 2/15. HW 2 Due</div> -->
 		        </div>
 
 		        <div class="level-1-links">
-		            <a href="{{ ev.slides_blank }}">Slides (Blank)</a>
-<!-- 		            <a href="{{ ev.slides }}">Slides</a>
-		            <a href="{{ ev.video }}">Video</a> -->
+		            <div class="p_cen"><p><a href="https://bruinlearn.ucla.edu/courses/176986/files/15688501">Blank Slides</a></p></div>
+		            <div class="p_cen"><p onclick='link_func("https://docs.google.com/presentation/d/1i_HAdG63pWNzRJnZ67MjNat0alLx0EbF")
+		            '><a>Slides (Inst.)</a></p></div>
+		            <div class="p_cen"><p>Slides</p></div>
+		            <div class="p_cen"><p>Video</p></div>
 		        </div>
 		      </div>
 		    </div>
@@ -372,17 +368,16 @@ Reconstruction in 3D Space</div>
 		        <div class="mid_section">
 		            <div class="event-title">
 Reconstruction in 3D Space</div>
-<!-- 		            <div class="quiz">
-		                <a href="">Quiz</a>,
-		                <a href="">Solutions</a>
-		            </div> -->
+ 		        	<div class="quiz">Quiz, Solutions</div>
 		            <!-- <div class="hw"><a href="">HW 1 released</a>, Due 2/15. HW 2 Due</div> -->
 		        </div>
 
 		        <div class="level-1-links">
-		            <a href="{{ ev.slides_blank }}">Slides (Blank)</a>
-		            <!-- <a href="{{ ev.slides }}">Slides</a>
-		            <a href="{{ ev.video }}">Video</a> -->
+		            <div class="p_cen"><p><a href="https://bruinlearn.ucla.edu/courses/176986/files/15688505">Blank Slides</a></p></div>
+		            <div class="p_cen"><p onclick='link_func("https://docs.google.com/presentation/d/1i_HAdG63pWNzRJnZ67MjNat0alLx0EbF")
+		            '><a>Slides (Inst.)</a></p></div>
+		            <div class="p_cen"><p>Slides</p></div>
+		            <div class="p_cen"><p>Video</p></div>
 		        </div>
 		      </div>
 		    </div>
@@ -395,17 +390,16 @@ Reconstruction in 3D Space</div>
 		        <div class="event-date">Feb. 27</div>
 		        <div class="mid_section">
 		            <div class="event-title">Stereo 3D Reconstruction</div>
-		            <!-- <div class="quiz">
-		                <a href="">Quiz</a>,
-		                <a href="">Solutions</a>
-		            </div> -->
+		            <div class="quiz">Quiz, Solutions</div>
 		            <!-- <div class="hw"><a href="">HW 1 released</a>, Due 2/15. HW 2 Due</div> -->
 		        </div>
 
 		        <div class="level-1-links">
-		            <a href="{{ ev.slides_blank }}">Slides (Blank)</a>
-<!-- 		            <a href="{{ ev.slides }}">Slides</a>
-		            <a href="{{ ev.video }}">Video</a> -->
+		            <div class="p_cen"><p><a href="https://bruinlearn.ucla.edu/courses/176986/files/15688507">Blank Slides</a></p></div>
+		            <div class="p_cen"><p onclick='link_func("https://docs.google.com/presentation/d/1ZBmjLVbpj2hNgJL16YN2t1tAH3Nkx9zL/edit")
+		            '><a>Slides (Inst.)</a></p></div>
+		            <div class="p_cen"><p>Slides</p></div>
+		            <div class="p_cen"><p>Video</p></div>
 		        </div>
 		      </div>
 		    </div>
@@ -414,17 +408,16 @@ Reconstruction in 3D Space</div>
 		        <div class="event-date">Feb. 29</div>
 		        <div class="mid_section">
 		            <div class="event-title">Photometry, Photometric Stereo</div>
-<!-- 		            <div class="quiz">
-		                <a href="">Quiz</a>,
-		                <a href="">Solutions</a>
-		            </div> -->
-		            <!-- <div class="hw"><a href="">HW 1 released</a>, Due 2/15. HW 2 Due</div> -->
+ 		            <div class="quiz">Quiz, Solutions</div>
+		            <div class="hw"><a href="">HW 4 released</a>, Due 3/14. HW 3 Due</div>
 		        </div>
 
 		        <div class="level-1-links">
-		            <a href="{{ ev.slides_blank }}">Slides (Blank)</a>
-		            <!-- <a href="{{ ev.slides }}">Slides</a>
-		            <a href="{{ ev.video }}">Video</a> -->
+		            <div class="p_cen"><p><a href="https://bruinlearn.ucla.edu/courses/176986/files/15688525">Blank Slides</a></p></div>
+		            <div class="p_cen"><p onclick='link_func("https://docs.google.com/presentation/d/1NWAtwypFprHlafrYuzRbPksI6IayrpbM/edit")
+		            '><a>Slides (Inst.)</a></p></div>
+		            <div class="p_cen"><p>Slides</p></div>
+		            <div class="p_cen"><p>Video</p></div>
 		        </div>
 		      </div>
 		    </div>
@@ -436,18 +429,17 @@ Reconstruction in 3D Space</div>
 		      <div class="top-level">
 		        <div class="event-date">Mar. 5</div>
 		        <div class="mid_section">
-		            <div class="event-title">Deep Learning I</div>
-		            <!-- <div class="quiz">
-		                <a href="">Quiz</a>,
-		                <a href="">Solutions</a>
-		            </div> -->
+		            <div class="event-title">Deep Learning I: Intro to CNNs</div>
+		            <div class="quiz">Quiz, Solutions</div>
 		            <!-- <div class="hw"><a href="">HW 1 released</a>, Due 2/15. HW 2 Due</div> -->
 		        </div>
 
 		        <div class="level-1-links">
-		            <a href="{{ ev.slides_blank }}">Slides (Blank)</a>
-<!-- 		            <a href="{{ ev.slides }}">Slides</a>
-		            <a href="{{ ev.video }}">Video</a> -->
+		            <div class="p_cen"><p><a href="https://bruinlearn.ucla.edu/courses/176986/files/15688533">Blank Slides</a></p></div>
+		            <div class="p_cen"><p onclick='link_func("https://docs.google.com/presentation/d/1NWAtwypFprHlafrYuzRbPksI6IayrpbM/edit")
+		            '><a>Slides (Inst.)</a></p></div>
+		            <div class="p_cen"><p>Slides</p></div>
+		            <div class="p_cen"><p>Video</p></div>
 		        </div>
 		      </div>
 		    </div>
@@ -455,18 +447,17 @@ Reconstruction in 3D Space</div>
 		      <div class="top-level">
 		        <div class="event-date">Mar. 7</div>
 		        <div class="mid_section">
-		            <div class="event-title">Deep Learning II</div>
-<!-- 		            <div class="quiz">
-		                <a href="">Quiz</a>,
-		                <a href="">Solutions</a>
-		            </div> -->
+		            <div class="event-title">Deep Learning II: ResNets</div>
+ 		            <div class="quiz">Quiz, Solutions</div>
 		            <!-- <div class="hw"><a href="">HW 1 released</a>, Due 2/15. HW 2 Due</div> -->
 		        </div>
 
 		        <div class="level-1-links">
-		            <a href="{{ ev.slides_blank }}">Slides (Blank)</a>
-		            <!-- <a href="{{ ev.slides }}">Slides</a>
-		            <a href="{{ ev.video }}">Video</a> -->
+		            <div class="p_cen"><p><a href="https://bruinlearn.ucla.edu/courses/176986/files/15688533">Blank Slides</a></p></div>
+		            <div class="p_cen"><p onclick='link_func("https://docs.google.com/presentation/d/1NWAtwypFprHlafrYuzRbPksI6IayrpbM/edit")
+		            '><a>Slides (Inst.)</a></p></div>
+		            <div class="p_cen"><p>Slides</p></div>
+		            <div class="p_cen"><p>Video</p></div>
 		        </div>
 		      </div>
 		    </div>
@@ -478,18 +469,17 @@ Reconstruction in 3D Space</div>
 		      <div class="top-level">
 		        <div class="event-date">Mar. 12</div>
 		        <div class="mid_section">
-		            <div class="event-title">Deep Learning III</div>
-		            <!-- <div class="quiz">
-		                <a href="">Quiz</a>,
-		                <a href="">Solutions</a>
-		            </div> -->
+		            <div class="event-title">Deep Learning III: RCNNs</div>
+		            <div class="quiz">Quiz, Solutions</div>
 		            <!-- <div class="hw"><a href="">HW 1 released</a>, Due 2/15. HW 2 Due</div> -->
 		        </div>
 
 		        <div class="level-1-links">
-		            <a href="{{ ev.slides_blank }}">Slides (Blank)</a>
-<!-- 		            <a href="{{ ev.slides }}">Slides</a>
-		            <a href="{{ ev.video }}">Video</a> -->
+		            <div class="p_cen"><p><a href="https://bruinlearn.ucla.edu/courses/176986/files/15688546">Blank Slides</a></p></div>
+		            <div class="p_cen"><p onclick='link_func("https://docs.google.com/presentation/d/1NWAtwypFprHlafrYuzRbPksI6IayrpbM/edit")
+		            '><a>Slides (Inst.)</a></p></div>
+		            <div class="p_cen"><p>Slides</p></div>
+		            <div class="p_cen"><p>Video</p></div>
 		        </div>
 		      </div>
 		    </div>
@@ -497,18 +487,17 @@ Reconstruction in 3D Space</div>
 		      <div class="top-level">
 		        <div class="event-date">Mar. 14</div>
 		        <div class="mid_section">
-		            <div class="event-title">Deep Learning IV</div>
-<!-- 		            <div class="quiz">
-		                <a href="">Quiz</a>,
-		                <a href="">Solutions</a>
-		            </div> -->
-		            <!-- <div class="hw"><a href="">HW 1 released</a>, Due 2/15. HW 2 Due</div> -->
+		            <div class="event-title">Deep Learning IV: Mask RCNNs</div>
+	 		        <div class="quiz">Quiz, Solutions</div>
+		            <div class="hw">HW 4 Due</div>
 		        </div>
 
 		        <div class="level-1-links">
-		            <a href="{{ ev.slides_blank }}">Slides (Blank)</a>
-		            <!-- <a href="{{ ev.slides }}">Slides</a>
-		            <a href="{{ ev.video }}">Video</a> -->
+		            <div class="p_cen"><p><a href="https://bruinlearn.ucla.edu/courses/176986/files/15688546">Blank Slides</a></p></div>
+		            <div class="p_cen"><p onclick='link_func("https://docs.google.com/presentation/d/1NWAtwypFprHlafrYuzRbPksI6IayrpbM/edit")
+		            '><a>Slides (Inst.)</a></p></div>
+		            <div class="p_cen"><p>Slides</p></div>
+		            <div class="p_cen"><p>Video</p></div>
 		        </div>
 		      </div>
 		    </div>
